@@ -18,7 +18,8 @@ public class CustomerEntry {
 		session.save(new Customer(201,"priya","andheri", "mumbai"));
 		session.save(new Customer(401,"rahul","cplace", "delhi"));
 		*/
-		session.save(new Customer(234,"chetan","vijaynagar","indore",22));
+		//session.save(new Customer(234,"chetan","vijaynagar","indore",22));
+		session.save(new Customer(343,"bhawesh","santacruz","mumbai",25,new Card(7,"345356","platinum")));
 		transaction.commit();
 		
 		session.close();
