@@ -4,15 +4,16 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Session;
-import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Restrictions;
 
-public class QBCExampleOne {
+public class AssociationMappingRestriction {
 	public static void main(String[] args) {
-		//QBC- will fetch multiple records using Criteria object
-		
 		Session session=Utility.getSessionFactory().openSession();
 		Criteria criteria=session.createCriteria(Customer.class);
+		//criteria.add(Restrictions.eq("city", "indore"));
+		
+		criteria.createAlias("card", "cr");
+		criteria.add(Restrictions.eq("cr.type", "golden"));
 		List<Customer> customers=criteria.list();
 		for(Customer customer:customers) {
 			System.out.println(customer.getCode()+","+customer.getName()+","+customer.getAddress()+","+customer.getCity()+","+customer.getAge());

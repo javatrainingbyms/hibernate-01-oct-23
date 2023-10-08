@@ -2,6 +2,7 @@ package com.ms;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
@@ -20,6 +21,6 @@ public class Customer {
 	private String address;
 	private String city;
 	private int age;
-	@OneToOne(cascade = CascadeType.PERSIST)
+	@OneToOne//(fetch = FetchType.LAZY)
 	private Card card;	//card_id
 }
