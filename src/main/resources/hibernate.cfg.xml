@@ -15,5 +15,6 @@
 	
 	<mapping class="com.ms.Customer"/>
 	<mapping class="com.ms.Card"/>
+	<mapping class="com.ms.GiftCard"/>
 	</session-factory>
 </hibernate-configuration>
